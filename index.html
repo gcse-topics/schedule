@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GCSE Revision Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#0b1020" />
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div>
+      <h1>GCSE Revision Tracker</h1>
+      <p class="subtitle">Click a week → click a day → tick tasks (saved automatically).</p>
+    </div>
+
+    <div class="header-actions">
+      <a class="btn" href="GCSE_Revision_Schedule_FULL_Detailed_Printable.pdf" target="_blank" rel="noopener">
+        Open Printable PDF
+      </a>
+      <button id="resetBtn" class="btn btn-ghost" title="Clears saved ticks (local only)">Reset</button>
+    </div>
+  </div>
+</header>
+
+<main class="shell">
+  <aside class="sidebar">
+    <section class="card">
+      <h2 style="margin:0 0 10px;">Dashboard</h2>
+
+      <div class="stat">
+        <div class="stat-label">Overall completion (filtered)</div>
+        <div class="progress"><div id="overallBar" class="progress-bar" style="width:0%"></div></div>
+        <div id="overallText" class="stat-value">0% (0/0)</div>
+      </div>
+
+      <div class="stat" style="margin-top:12px;">
+        <div class="stat-label">Selected week (filtered)</div>
+        <div class="progress"><div id="weekBar" class="progress-bar" style="width:0%"></div></div>
+        <div id="weekText" class="stat-value">0% (0/0)</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <label class="control">
+        <span>Subject filter</span>
+        <select id="subjectFilter">
+          <option value="all">All</option>
+        </select>
+      </label>
+
+      <div class="divider"></div>
+
+      <h3 class="sidebar-title">Weeks</h3>
+      <nav id="weekList" class="week-list"></nav>
+    </section>
+  </aside>
+
+  <section class="main">
+    <section id="weekView" class="card"></section>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="muted">✅</span>
+    <span class="muted">Progress saved in your browser (localStorage).</span>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
